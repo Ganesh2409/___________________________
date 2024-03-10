@@ -12,6 +12,7 @@ public:
             int end = r[i];
             vector<int> subarray(nums.begin() + start, nums.begin() + end + 1); // we adding nums.begin()which is zero index to the end so it will exclude the traget elemnet to get it we will include +1 
             sort(subarray.begin(),subarray.end());
+            
             int diff = subarray[1] - subarray[0];
             bool isArithmetic = true;
 
