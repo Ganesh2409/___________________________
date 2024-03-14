@@ -36,3 +36,10 @@ int main(){
 --> for printing stars the formula is like 2*i-1;
 --> for spaces it goes like this >> n - i -1 just think about it buddy !
 */
+
+
+*********
+ *******
+  *****
+   ***
+    *
