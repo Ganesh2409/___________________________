@@ -14,7 +14,7 @@ public:
                 return mid;
 
             if (nums[start] <= nums[mid]) { 
-                if (nums[start] <= target && target <=nums[mid]) {
+                if (nums[start] <= target && target < nums[mid]) {
                     end = mid - 1;
                 } else {
                     start = mid + 1;
@@ -36,16 +36,22 @@ public:
 
 int main(){
     int n;
-    cin>>n;
-    vector<int>arr(n);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    vector<int> nums(n);
+    cout << "Enter the elements of the array in rotated sorted order: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> nums[i];
     }
-    cout<<"Enter the variable to search :"<<endl;
-    int target=0;
+    int target;
+    cout << "Enter the target element to search: ";
+    cin >> target;
     Solution solution;
-
-    int index = solution.search(arr,target);
-    cout<<index<<endl;
+    int result = solution.search(nums, target);
+    if (result != -1) {
+        cout << "Element found at index: " << result << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
     return 0;
 }
