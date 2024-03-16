@@ -25,29 +25,6 @@ public:
     }
 };
 
-class Solution { // --> with recursion buddy ! 
-public:
-    int search_helper(vector<int> nums,int left ,int right,int target){
-        if(left > right){ // we searched the entire array still we dont find it 
-            return -1;
-        }
-        else{
-            int mid = (left + right )/2;
-            if(nums[mid] == target){
-                return mid;
-            }
-            else if(nums[mid] > target){
-                right = mid-1;
-                return search_helper(nums,left,right,target);
-            }
-            else{
-                left = mid +1;
-                return search_helper(nums,left,right,target);
-            }
-         }
-
-
-    }
     int search(vector<int>& nums, int target) {
         int n= nums.size();
         int start = 0;
@@ -55,3 +32,47 @@ public:
         return search_helper(nums,start,end,target);
     }
 };
+
+
+
+// __________________________________ RECURSIVE BS  _________________________________________
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+int recursion_BS(vector<int>&arr,int left,int right,int target){
+    int ans;
+    if(left > right) return -1;
+    int mid = left + (right - left)/2;
+    if(arr[mid] == target) return mid; // we definatley reach to the each and every ele in arr wih this process of shifing the mid 
+    if(arr[mid] > target){
+        right = mid-1;
+        return recursion_BS(arr,left,right,target);
+    }
+    else{
+        left = mid+1;
+        return recursion_BS(arr,left,right,target);
+    }
+          
+}
+       
+};
+int main()
+{
+    int n ;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int target ;
+    cin>>target;
+    int left =0;
+    int right = n-1;
+    
+    Solution recur_BS;
+
+    int recursive_bs = recur_BS.recursion_BS(arr,left,right,target);
+    cout<<"yeah i found the element at index :"<<recursive_bs<<endl;
+ return 0;
+}
