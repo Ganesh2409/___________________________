@@ -1,39 +1,28 @@
 // https://leetcode.com/problems/binary-search/description/
 
-class Solution { // --> without recursion buddy !
-public:
-    int search(vector<int>& nums, int target) {
-        int n= nums.size();
-        int start = 0;
-        int end = n -1;
-        while(start <= end){ // if start == end means there is only one element buddy u need to handle this case seperately 
-            int mid = (start +end) /2;// here u missing to update the mid value every time so focus on it buddy 
-            if(nums[mid] == target) {
-                return  mid;
-
-            } 
-            else if(nums[mid] > target){
-                end = mid-1;
-                return 
-            }
-            else{
-                start = mid+1;
-            }
-        }
-        return -1;
+// class Solution { // --> without recursion buddy !
+// public:
+//     int search(vector<int>& nums, int target) {
+//         int n= nums.size();
+//         int start = 0;
+//         int end = n -1;
+//         while(start <= end){ // if start == end means there is only one element buddy u need to handle this case seperately 
+//             int mid = (start +end) /2;// here u missing to update the mid value every time so focus on it buddy 
+//             if(nums[mid] == target) {
+//                 return  mid;
+//             } 
+//             else if(nums[mid] > target){
+//                 end = mid-1;
+//                 return 
+//             }
+//             else{
+//                 start = mid+1;
+//             }
+//         }
+//         return -1;
         
-    }
-};
-
-    int search(vector<int>& nums, int target) {
-        int n= nums.size();
-        int start = 0;
-        int end = n -1;
-        return search_helper(nums,start,end,target);
-    }
-};
-
-
+//     }
+// };
 
 // __________________________________ RECURSIVE BS  _________________________________________
 #include<bits/stdc++.h>
