@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+
 // undirected weighted graph 
 
 // Every One Hated Approach !
@@ -18,6 +20,9 @@ void Dijkstra(vector<vector<pair<int,int>>>&adj,vector<int>&explored,vector<int>
     int count = adj.size();
 
     while(count--){
+    
+    // getting the minimum node 
+
 
     int node =-1,value=INT_MAX;
 
@@ -27,7 +32,8 @@ void Dijkstra(vector<vector<pair<int,int>>>&adj,vector<int>&explored,vector<int>
             value = dist[i];
         }
     }
-    explored[node]=1;
+    explored[node]=1;  // 1 st loop lo zero ippudu explored loki ochidhi 
+
 
     // exploring the neighbours 
 

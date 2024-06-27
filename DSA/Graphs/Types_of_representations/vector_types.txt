@@ -1,0 +1,2 @@
+>>     vector<vector<pair<int,int>>>adjlist(vertices); --> vector of all pairs associated to a vector 
+>>  
